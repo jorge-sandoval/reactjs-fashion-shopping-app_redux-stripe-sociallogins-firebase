@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/home-page/home-page.component';
 import ShopPage from './pages/shop/shop.component';
+import Header from './components/header/header.component';
 
 const HatsPage = () => {
   return (
@@ -35,12 +36,11 @@ const TopicDetail = (props) => {
 function App() {
   return (
     <div>
-      <Route exact path='/' component={HomePage}/>
-      <Route exact paTH='/shop' component={ShopPage}/>
-
-      <Route exact path='/hats' component={HatsPage}/>
-      <Route exact path='/topics' component={TopicsList}/>
-      <Route exact path='/topics/:topicId' component={TopicDetail}/>
+      <Header/>
+      <Switch>
+        <Route exact path='/' component={HomePage}/>
+        <Route exact paTH='/shop' component={ShopPage}/>
+      </Switch>
     </div>
   );
 }
