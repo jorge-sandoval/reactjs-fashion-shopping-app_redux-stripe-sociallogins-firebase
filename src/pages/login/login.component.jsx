@@ -1,9 +1,13 @@
 import React from 'react';
 import './login.styles.scss';
+import SignIn from '../../components/sign-in/sign-in.component';
 
 const Login = () => {
     return (
-        <div>SIGN IN</div>
+        <div>
+            <div>SIGN IN</div>
+            <SignIn></SignIn>
+        </div>
     )
 }
 
