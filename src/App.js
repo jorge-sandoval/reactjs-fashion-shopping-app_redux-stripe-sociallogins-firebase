@@ -5,7 +5,7 @@ import HomePage from './pages/home-page/home-page.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import Login from './pages/login/login.component';
-import {auth} from './firebase/firebase.utils'
+import { auth } from './firebase/firebase.utils'
 
 const HatsPage = () => {
   return (
@@ -61,7 +61,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Header/>
+        <Header currentUser={this.state.currentUser}/>
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/shop' component={ShopPage}/>
