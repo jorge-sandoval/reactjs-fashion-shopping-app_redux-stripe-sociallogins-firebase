@@ -30,9 +30,6 @@ class SignIn extends Component {
         catch(error) {
             alert(error.message);
         }
-        
-
-
     }
 
     handleChange = (e) => {
@@ -65,7 +62,7 @@ class SignIn extends Component {
                         required>
                     </FormInput>
                     <div className="buttons">
-                        <CustomButton type="submit">Sign In</CustomButton>
+                        <CustomButton type="submit" onClick={this.handleSubmit}>Sign In</CustomButton>
                         <CustomButton isGoogleSignIn  onClick={signInWithGoogle}>Sign In With Google</CustomButton>
                     </div>
                 </form>
