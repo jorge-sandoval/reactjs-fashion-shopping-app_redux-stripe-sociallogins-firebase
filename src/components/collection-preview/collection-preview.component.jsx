@@ -9,10 +9,9 @@ const CollectionPreview = ({title, items}) => {
             <div className='preview'>
                 {
                     items.map( 
-                        ( {id, name, price, imageUrl} ) => (
-                            <CollectionItem key={id} 
-                                name={name} price={price}
-                                imageUrl={imageUrl}>
+                        ( item ) => (
+                            <CollectionItem key={item.id} 
+                                item={item}>
                             </CollectionItem>
                         )
                     )
