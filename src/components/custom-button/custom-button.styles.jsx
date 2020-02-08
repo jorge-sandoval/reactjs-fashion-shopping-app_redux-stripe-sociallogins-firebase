@@ -39,7 +39,7 @@ const getButtonStyles = (props) => {
     if (props.isGoogleSignIn) {
         return GoogleSignInButtonStyles;
     }
-    else if ( props.iverted ) {
+    else if ( props.inverted ) {
         return InvertedButtonStyles
     }
     return ButtonStyles;

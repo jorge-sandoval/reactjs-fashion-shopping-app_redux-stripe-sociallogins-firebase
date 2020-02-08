@@ -11,9 +11,12 @@ export const selectShopCollectionsArray = createSelector(
     [selectShopCollections],
     (collections) => {
         const arr = [];
-        for(let key in collections) {
-            if(collections.hasOwnProperty(key)) {
-                arr.push(collections[key]);
+
+        if( collections ) {
+            for(let key in collections) {
+                if(collections.hasOwnProperty(key)) {
+                    arr.push(collections[key]);
+                }
             }
         }
 
@@ -23,5 +26,5 @@ export const selectShopCollectionsArray = createSelector(
 
 export const selectCollection = collectionUrl =>  createSelector(
     [selectShopCollections],
-    collections => collections[collectionUrl]
+    collections => collections ? collections[collectionUrl] : null
 )
