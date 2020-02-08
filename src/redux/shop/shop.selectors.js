@@ -9,7 +9,16 @@ export const selectShopCollections = createSelector(
 
 export const selectShopCollectionsArray = createSelector(
     [selectShopCollections],
-    (collections) => Object.values(collections)
+    (collections) => {
+        const arr = [];
+        for(let key in collections) {
+            if(collections.hasOwnProperty(key)) {
+                arr.push(collections[key]);
+            }
+        }
+
+        return arr;
+    }
 );
 
 export const selectCollection = collectionUrl =>  createSelector(
