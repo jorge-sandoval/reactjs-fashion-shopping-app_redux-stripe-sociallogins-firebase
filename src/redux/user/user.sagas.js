@@ -13,7 +13,7 @@ export function* signInWithGoogle() {
             ...userSnapshot.data()
         }));
     } catch( error ){
-
+        yield put ( googleSignInFailure(error) );
     }
 }
 
