@@ -7,33 +7,14 @@ import Header from './components/header/header.component';
 import Login from './pages/login/login.component';
 import CheckoutPage from './pages/checkout/checkout.component.jsx'
 import { connect } from 'react-redux';
+import { checkUserSession } from './redux/user/user.actions';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
-  componentDidMount(){
-    /*
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
-      
-      
-      if(userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot( snapshot => {
-          setCurrentUser(
-            {
-              id: snapshot.id,
-              ...snapshot.data()
-            }
-          )
-        });
-      }
-      else {
-        setCurrentUser(null);
-      }
-      
-    });
-    */
+  componentDidMount() {
+    const { checkUserSession } = this.props;
+    checkUserSession()
   }
 
   componentWillUnmount() {
@@ -70,7 +51,11 @@ const mapStateToProps = ({user}) => {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch( checkUserSession() ),
+});
+
 export default connect( 
   mapStateToProps, 
-  null
+  mapDispatchToProps
 )(App);
